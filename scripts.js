@@ -47,13 +47,13 @@ $(function () {
 
 //You can also pass in a function wth the replaceWith method!
 
-  $("li").replaceWith("<li>Replaced</li>");
+  // $("li").replaceWith("<li>Replaced</li>");
 
 //You can also set a variable to a JQuery object and then you can replace the item with that variable. 
 
-  let firstListItem = $("li:first");
+  // let firstListItem = $("li:first");
 
-  $("p:first").replaceWith(firstListItem);
+  // $("p:first").replaceWith(firstListItem);
 
   //Mini Project, replace all the red and blue boxes on the page with a green box!
 
@@ -62,13 +62,38 @@ $(function () {
   // $(".blue-box").replaceWith("<div class='green-box'>Replacing the blue box!</div>");
 
   //This soultion can replace both with one line of code!
-  $(".red-box, .blue-box").replaceWith("<div class='green-box'>Replacing the Red and Blue box!</div>");
+  // $(".red-box, .blue-box").replaceWith("<div class='green-box'>Replacing the Red and Blue box!</div>");
 
   //You can also do it in reverse order ilke we did before with prepend and append. 
-  $("<div class='pink-box'>We're all PINK now!</div>").replaceAll(".red-box, .blue-box, .green-box" );
+  // $("<div class='pink-box'>We're all PINK now!</div>").replaceAll(".red-box, .blue-box, .green-box" );
 
 
+  //The instructor prefers using the replaceWith() method best as he thinks it is more readable. 
+
+});
+
+// Removing Elements and Content
+$(function () {
+
+//Using the remove method, its pretty basic. It will remove all the items you specify. All event handlers and all asssociated data is lost with the remove method. 
+  // $("li").remove();
+
+//Mini Challenge! Remove all direct Children on the form element which are not a text area and not an input of type text and a br. 
+  $("form").children().not("input:text, textarea, br ").remove();
+
+  //This next one is similar to the remove function, but it will remember all the data and event handlers that are associated with the removed element. If you ever want to re-insert a removed element, it is best to use the detach() method. The append() method will add the item at the end of the element. Using the detach() method will remove all the child elements. 
+
+  let redBox = $(".red-box").detach();
+  $("#content").append(redBox);
 
 
+// The empty() method will not remove the element itself, but it will remove everything inside of it! If you inspect the page, in the elements tab you will still see a p tag except now it is empty. It will also remove any child elements inside the tag itself. 
+
+$("p:first").empty();
+
+
+//Mini Challenge! Empty all the boxes on the page whatever color they have, so that this will remove the text inside them. 
+
+$(".red-box, .blue-box, .green-box").empty();
 
 });
