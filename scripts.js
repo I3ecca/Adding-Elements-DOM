@@ -1,4 +1,6 @@
-//Adding new Elements to the DOM
+//Uncomment lines of code to see the effects in the live server HTML doc. 
+
+//Adding new Elements to the DOM\
 $(function () {
   //Using the append funciton, you can add elements as a child of the elements selected. If there are multiple elements selected, you are going to add a new child for each of those!
 // $("ul ul:first").append("<li>I'm going to be the last sub-item!");
@@ -41,5 +43,32 @@ $(function () {
 });
 // Replacing New Elements and Content
 $(function () {
+//Using the replaceWith() method, you can replace the selected element(s) with what you want.Notice how when this is implemented, that there are only 4 li items. This is because the sub li items are completely gone and replace with the text we specified. 
+
+//You can also pass in a function wth the replaceWith method!
+
+  $("li").replaceWith("<li>Replaced</li>");
+
+//You can also set a variable to a JQuery object and then you can replace the item with that variable. 
+
+  let firstListItem = $("li:first");
+
+  $("p:first").replaceWith(firstListItem);
+
+  //Mini Project, replace all the red and blue boxes on the page with a green box!
+
+  //this soultion works to change them seperately and with different text inside each to specify what was replaced.
+  // $(".red-box").replaceWith("<div class='green-box'>Replacing the red box!</div>");
+  // $(".blue-box").replaceWith("<div class='green-box'>Replacing the blue box!</div>");
+
+  //This soultion can replace both with one line of code!
+  $(".red-box, .blue-box").replaceWith("<div class='green-box'>Replacing the Red and Blue box!</div>");
+
+  //You can also do it in reverse order ilke we did before with prepend and append. 
+  $("<div class='pink-box'>We're all PINK now!</div>").replaceAll(".red-box, .blue-box, .green-box" );
+
+
+
+
 
 });
