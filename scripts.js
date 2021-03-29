@@ -1,15 +1,16 @@
+//Adding new Elements to the DOM
 $(function () {
   //Using the append funciton, you can add elements as a child of the elements selected. If there are multiple elements selected, you are going to add a new child for each of those!
-$("ul ul:first").append("<li>I'm going to be the last sub-item!");
+// $("ul ul:first").append("<li>I'm going to be the last sub-item!");
 
 //we can also add items to the DOM by selecting the elements we want to add and then appendTo the element(s) we want. 
-$("<li>I'm going to be the last sub-item!</li>").appendTo($("ul ul:last"))
+// $("<li>I'm going to be the last sub-item!</li>").appendTo($("ul ul:last"))
 
 //The prepend() method inserts specified content at the begining of the selected elements. 
-$("ul ul").prepend("<li>I'm going to be the first sub-item!</li>")
+// $("ul ul").prepend("<li>I'm going to be the first sub-item!</li>")
 
 //Just like before, you can also use a method called prependTo() to have the same effect. You dont have to use the dollar sign. 
-$("<h4>Peter Sommerhoff</h4>").prependTo("#content");
+// $("<h4>Peter Sommerhoff</h4>").prependTo("#content");
 
 //You can also add elements as a sibling to any element you select. Using the after() method you can add a sibling element after element(s) with the red-box class. 
 // $(".red-box").after("<div class ='red-box'> Another Red Box </div>")
@@ -33,8 +34,12 @@ $("<h4>Peter Sommerhoff</h4>").prependTo("#content");
 
 //quick mini challenge! Add a new box as a sibling to each of the boxes. 
 
-$(".red-box").after("<div class ='red-box'> Sibling Red Box </div>");
-$(".blue-box").after("<div class ='blue-box'> Sibling Blue Box </div>");
-$(".green-box").after("<div class ='green-box'> Sibling Green Box </div>");
+// $(".red-box").after("<div class ='red-box'> Sibling Red Box </div>");
+// $(".blue-box").after("<div class ='blue-box'> Sibling Blue Box </div>");
+// $(".green-box").after("<div class ='green-box'> Sibling Green Box </div>");
+
+});
+// Replacing New Elements and Content
+$(function () {
 
 });
