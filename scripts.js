@@ -41,6 +41,7 @@ $(function () {
 // $(".green-box").after("<div class ='green-box'> Sibling Green Box </div>");
 
 });
+
 // Replacing New Elements and Content
 $(function () {
 //Using the replaceWith() method, you can replace the selected element(s) with what you want.Notice how when this is implemented, that there are only 4 li items. This is because the sub li items are completely gone and replace with the text we specified. 
@@ -79,21 +80,58 @@ $(function () {
   // $("li").remove();
 
 //Mini Challenge! Remove all direct Children on the form element which are not a text area and not an input of type text and a br. 
-  $("form").children().not("input:text, textarea, br ").remove();
+  // $("form").children().not("input:text, textarea, br ").remove();
 
   //This next one is similar to the remove function, but it will remember all the data and event handlers that are associated with the removed element. If you ever want to re-insert a removed element, it is best to use the detach() method. The append() method will add the item at the end of the element. Using the detach() method will remove all the child elements. 
 
-  let redBox = $(".red-box").detach();
-  $("#content").append(redBox);
+  // let redBox = $(".red-box").detach();
+  // $("#content").append(redBox);
 
 
 // The empty() method will not remove the element itself, but it will remove everything inside of it! If you inspect the page, in the elements tab you will still see a p tag except now it is empty. It will also remove any child elements inside the tag itself. 
 
-$("p:first").empty();
+// $("p:first").empty();
 
 
 //Mini Challenge! Empty all the boxes on the page whatever color they have, so that this will remove the text inside them. 
 
-$(".red-box, .blue-box, .green-box").empty();
+// $(".red-box, .blue-box, .green-box").empty();
+
+});
+
+//Manipulating Attributes and Properties
+$(function(){
+  //attr(), prop(), val()
+
+  // We will use the attribute function , attr() , to manipulate the attributes. 
+  // lets set a variable to the link we created. 
+  let specialLink = $("#special-link");
+  //When we log out the link's attribute of the href value, we get the URL of the anchor element. 
+  console.log(specialLink.attr("href"));
+  console.log(specialLink.attr("title"));
+
+  //Now we can change the value of the URL of our achor element. To do this we apply the attr() method to the special link variable we made. We pass in the attribute we want to change and then we pass in what to change it to! In this case, we change the recipe link to a different one. 
+  specialLink.attr("href", "https://tastesbetterfromscratch.com/homemade-mac-and-cheese/")
+
+//Keep in mind that this will not work with boolean values. 
+
+
+let checkbox = $("input:checkbox");
+//When we use the prop method to check the value of the checkbox checked, it will return true.
+//When we use the attr method to see the atribute, we just get checked. It will always return checked because it is hardcoded. 
+console.log(checkbox.prop("checked"));
+console.log(checkbox.attr("checked"));
+
+//you can select multiple elements if there are more than one there. 
+let textInput = $("input:text");
+console.log(textInput.val());
+//You can also use the val() to change the value to what you want. 
+textInput.val("Nova Levels");
+
+let rangeInput= $("input[type='range']");
+console.log(rangeInput.val());
+rangeInput.val("75");
+//Using val() is good when you need to find out the values of data in form elements. 
+
 
 });
